@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Day 3: Intro to Conditional Statements</h2>
+    <code>
+  'use strict';
+<br>
+process.stdin.resume();
+<br>
+process.stdin.setEncoding('utf-8');
+<br>
+let inputString = '';
+<br>
+let currentLine = 0;
+<br>
+process.stdin.on('data', inputStdin => {
+<br>
+inputString += inputStdin;
+<br>
+});
+<br>
+process.stdin.on('end', _ => {
+<br>
+inputString = inputString.replace(/\s*$/, '')
+<br>
+.split('\n')
+<br>
+.map(str => str.replace(/\s*$/, ''));
+<br>
+main();
+<br>
+});
+<br>
+function readLine() {
+<br>
+return inputString[currentLine++];
+<br>
+ }
+ <br>
+function main() {
+    <br>
+    const N     = parseInt(readLine(), 10);
+    <br>
+    
+    if (N%2 == 1 || (N > 5 && N <=20))
+    <br>
+    {
+        <br>
+        console.log("Weird");}
+        <br>
+    else{
+        <br>
+        console.log("Not Weird")
+        <br>
+}
+<br>
+}
+
+
+
+    </code>
+</body>
+
+</html>

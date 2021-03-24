@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Day 1: Data Types</h2>
+    <code>
+        <br>
+        process.stdin.resume();
+        <br>
+        process.stdin.setEncoding('ascii');
+        <br>        
+        var input_stdin = "";
+        <br>
+        var input_stdin_array = "";
+        <br>
+        var input_currentline = 0;
+        <br>        
+        process.stdin.on('data', function (data) {
+        <br>
+        input_stdin += data;
+        });
+        <br>        
+        process.stdin.on('end', function () {
+       <br>
+        input_stdin_array = input_stdin.split("\n");
+        <br>
+         main(); 
+         <br>   
+        });
+        <br>        
+        // Reads complete line from STDIN
+        <br>
+        function readLine() {
+            <br>
+            return input_stdin_array[input_currentline++];
+            <br>
+        }
+        <br>
+        function main() {
+            <br>
+            var i = 4;
+            <br>
+            var d = 4.0;
+            <br>
+            var s = "HackerRank "
+
+            // Declare second integer, double, and String variables.
+            <br>
+          var i2;
+          <br>
+          var d2;
+          <br>
+          var s2;
+          <br>
+            // Read and save an integer, double, and String to your variables.
+            <br>
+           i2=parseInt(readLine());
+           <br>
+           d2=parseFloat(readLine());
+           <br>
+            s2=readLine();
+            <br>
+            // Print the sum of both integer variables on a new line.
+            <br>
+                   console.log(i + i2);
+                   <br>  
+            // Print the sum of the double variables on a new line.
+            <br>
+               console.log((d+d2).toFixed(1));
+               <br>
+            // Concatenate and print the String variables on a new line.
+            <br>
+                console.log(s+s2);
+                <br>
+            // The 's' variable above should be printed first.
+            <br>          
+                }
+
+    </code>
+</body>
+
+</html>

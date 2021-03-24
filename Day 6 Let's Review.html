@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Day 6: Let's Review</h2>
+    <code>
+    function processData(input) {
+        <br>
+        arr = input.split("\n");
+        <br>     
+        n = parseInt(arr[0]); //2
+        <br>
+        i=0;
+        <br>
+        for ( ;;) {  //arr0=2,arr1=Hacker,arr=Rank
+            <br>
+            if(i>=n)
+            <br>
+                break;
+                <br>       
+            console.log(getResult(arr[++i]));
+            <br>
+                       
+        }
+        <br>
+      
+    }  
+    <br>
+    function getResult(word) {
+        <br>
+        var outEven = "";
+        <br>
+        var outOdd = "";
+        <br>
+     
+        
+        for(j=0; j<word.length;j++){
+            <br>
+            if (j % 2 == 0) {
+                <br>
+                outEven += word[j]; // Hce
+                <br>
+            } else{
+                <br>
+                outOdd += word[j]; // akr
+                <br>
+            }  
+            <br>   
+        }
+        <br>
+        return outEven + " " + outOdd;
+        <br>
+           }
+           <br>      
+    
+    process.stdin.resume();
+    <br>
+    process.stdin.setEncoding("ascii");
+    <br>
+    _input = "";
+    <br>
+    process.stdin.on("data", function (input) {
+        <br>
+        _input += input;
+        <br>
+    });
+    <br>
+    process.stdin.on("end", function () {
+        <br>
+       processData(_input);
+       <br>
+    });
+    
+    
+
+
+
+  </code>
+
+</body>
+
+</html>

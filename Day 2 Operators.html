@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Day 2: Operators</h2>
+    <code>
+        'use strict';
+        <br>
+        process.stdin.resume();
+        <br>
+        process.stdin.setEncoding('utf-8');
+        <br>        
+        let inputString = '';
+        <br>
+        let currentLine = 0;
+        <br>        
+        process.stdin.on('data', inputStdin => {
+            <br>
+            inputString += inputStdin;
+            <br>
+        });
+        <br>
+        process.stdin.on('end', _ => {
+            <br>
+            inputString = inputString.replace(/\s*$/, '')
+            <br>
+                .split('\n')
+                <br>
+                .map(str => str.replace(/\s*$/, ''));
+                <br>        
+            main();
+            <br>
+        });
+        <br>        
+        function readLine() {
+            <br>
+            return inputString[currentLine++];
+            <br>
+        }
+        <br>
+        // Complete the solve function below.
+        <br>
+        function solve(meal_cost, tip_percent, tax_percent) {
+            <br>  
+            var total_cost,total_costy 
+            <br>
+           //tip_ percent =20,meal_cost=12,tax_percent=8
+           <br>
+           //tip_percent=12/100*20
+           <br>
+           //tax-percent=8/100*20
+           <br>
+           //total_cost meal_cost(12)+tip_percent(2.4)+tax_percent(0,96)+
+           <br>           
+           tip_percent=meal_cost/100*tip_percent;
+           <br>
+           tax_percent=tax_percent/100*12;
+           <br>
+           total_cost=meal_cost+tip_percent+tax_percent;
+           <br>
+           total_costy=Math.round(total_cost)
+           <br>
+            console.log(total_costy);
+            <br>
+                }
+                <br>
+        
+        function main() {
+            <br>
+            const meal_cost = parseFloat(readLine());
+            <br>        
+            const tip_percent = parseInt(readLine(), 10);
+            <br>        
+            const tax_percent = parseInt(readLine(), 10);
+            <br>        
+            solve(meal_cost, tip_percent, tax_percent);
+            <br>
+        }
+       
+        
+    </code>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Day 4: Class vs. Instance</h2>
+    <code>
+        process.stdin.resume();
+        <br>
+        process.stdin.setEncoding('ascii');
+        <br>        
+        var input_stdin = "";
+        <br>
+        var input_stdin_array = "";
+        <br>
+        var input_currentline = 0;
+        <br>
+        process.stdin.on('data', function (data) {
+            <br>
+            input_stdin += data;
+            <br>
+        });
+        <br>
+        process.stdin.on('end', function () {
+            <br>
+            input_stdin_array = input_stdin.split("\n");
+            <br>
+            main();   
+            <br> 
+        });
+        <br>
+        function readLine() {
+            <br>
+            return input_stdin_array[input_currentline++];
+            <br>
+        }
+        <br>
+        function Person(initialAge) {
+            <br>
+          // Add some more code to run some checks on initialAge
+          <br>
+          if (initialAge < 0) {
+            <br>
+            console.log("Age is not valid, setting age to 0.");
+            <br>
+            this.age = 0;
+            <br>
+          } else {
+            <br>
+            this.age = initialAge;
+            <br>
+          }
+          <br>
+          this.amIOld = function() {
+            <br>
+            // Do some computations in here and print out the correct statement to the console
+            <br>
+            if (this.age < 13) {
+                <br>
+              console.log("You are young.");
+              <br>
+            } else if (this.age >= 13 && this.age < 18) {
+                <br>
+              console.log("You are a teenager.");
+              <br>
+            } else {
+                <br>
+              console.log("You are old.");
+              <br>
+            }
+            <br>
+          };
+          <br>
+          this.yearPasses = function(){
+            <br>
+            // Increment the age of the person in here
+            <br>
+            this.age++;
+            <br>
+          };
+          <br>
+        }
+        <br>
+        
+                function main() {
+                    <br>
+            var T=parseInt(readLine());
+            <br>
+            for(i=0;i<T;i++){
+                <br>
+                var age=parseInt(readLine());
+                <br>
+                var p=new Person(age);
+                <br>
+                p.amIOld();
+                <br>
+                for(j=0;j<3;j++){
+                    <br>
+                    p.yearPasses();
+                    <br>                    
+                }
+                <br>
+                p.amIOld();
+                <br>
+                console.log("");  
+                <br> 
+                }
+                <br>
+            }
+
+    </code>
+</body>
+
+</html>
